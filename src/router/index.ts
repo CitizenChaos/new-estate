@@ -1,6 +1,7 @@
+import { App } from 'vue'
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import about from './mod/about'
-import { App } from 'vue'
+import setupGuard from './guard'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -19,6 +20,7 @@ const router = createRouter({
 export function setupRouter(app: App) {
   app.use(router)
   // 创建路由守卫
+  setupGuard(router)
 }
 
 export default router
