@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import mod1 from './mod/about'
+import about from './mod/about'
+import { App } from 'vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -7,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
   },
-  ...mod1
+  ...about
 ]
 
 const router = createRouter({
@@ -15,7 +16,7 @@ const router = createRouter({
   routes
 })
 
-export function setupRouter(app: any) {
+export function setupRouter(app: App) {
   app.use(router)
   // 创建路由守卫
 }

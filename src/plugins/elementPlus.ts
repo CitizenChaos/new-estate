@@ -1,5 +1,6 @@
 import { ElButton } from 'element-plus'
+import { App } from 'vue'
 
-export function setupElementPlus(app: any) {
+export function setupElementPlus(app: App) {
   app.use(ElButton)
 }

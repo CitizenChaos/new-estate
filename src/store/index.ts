@@ -1,3 +1,4 @@
+import { App } from 'vue'
 import { createStore } from 'vuex'
 import getters from './getters'
 const path = require('path')
@@ -16,9 +17,8 @@ const store = createStore({
   modules
 })
 
-export function setupStore(app: any) {
+export function setupStore(app: App) {
   app.use(store)
-  console.log('store', store)
 }
 
 export default store
