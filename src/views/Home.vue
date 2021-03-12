@@ -9,6 +9,9 @@
     <el-button class="custom_btn_36" disabled>36</el-button>
     <el-button class="custom_btn_plain_36">36</el-button>
     <el-button class="custom_btn_plain_36" disabled>36</el-button>
+    <div style="margin-top:20px;"></div>
+    <el-input v-model="input"></el-input>
+    <el-input v-model="input" disabled></el-input>
     <staff-swiper />
   </div>
 </template>
@@ -22,7 +25,9 @@ export default defineComponent({
     StaffSwiper
   },
   setup() {
-    const state = reactive({})
+    const state = reactive({
+      input: ''
+    })
 
     return {
       ...toRefs(state)

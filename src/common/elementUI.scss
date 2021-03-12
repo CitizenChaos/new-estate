@@ -1,0 +1,20 @@
+// 输入框
+.el-input {
+  .el-input__inner {
+    border-radius: 0px !important;
+    border-color: #d8d8d8 !important;
+    &:hover {
+      border-color: #b5b5b5 !important;
+    }
+    &:focus {
+      border-color: #0081ff !important;
+    }
+  }
+}
+
+// form表单
+.el-form {
+  .el-form-item.is-error .el-input__inner {
+    border-color: #ff4343 !important;
+  }
+}

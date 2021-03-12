@@ -4,6 +4,7 @@ import router, { setupRouter } from './router'
 import { setupStore } from './store'
 import { setupElementPlus } from '@/plugins/elementPlus'
 import '@/common/common.scss'
+import '@/common/elementUI.scss'
 import '@/theme/theme.scss'
 
 const app = createApp(App)
