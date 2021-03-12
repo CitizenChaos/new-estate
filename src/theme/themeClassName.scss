@@ -1,0 +1,88 @@
+@import './mixin.scss';
+
+@mixin themeFn(
+  $themeColor,
+  $themeColorHover,
+  $themeColorActive,
+  $themeColorDisable,
+  $themeColorError
+) {
+  .theme_font_color {
+    color: $themeColor !important;
+  }
+
+  .custom_btn_plain_32 {
+    @include el-button-plain-common(
+      $themeColor,
+      $themeColorHover,
+      $themeColorActive,
+      $themeColorDisable,
+      $themeColorError
+    );
+    &.el-button {
+      height: 32px !important;
+      line-height: 30px !important;
+      min-width: 80px !important;
+    }
+  }
+  .custom_btn_plain_36 {
+    @include el-button-plain-common(
+      $themeColor,
+      $themeColorHover,
+      $themeColorActive,
+      $themeColorDisable,
+      $themeColorError
+    );
+    &.el-button {
+      height: 36px !important;
+      line-height: 34px !important;
+      min-width: 100px !important;
+    }
+  }
+
+  .custom_btn_32 {
+    @include el-button-common(
+      $themeColor,
+      $themeColorHover,
+      $themeColorActive,
+      $themeColorDisable,
+      $themeColorError
+    );
+    &.el-button {
+      height: 32px !important;
+      line-height: 30px !important;
+      min-width: 80px !important;
+    }
+  }
+  .custom_btn_36 {
+    @include el-button-common(
+      $themeColor,
+      $themeColorHover,
+      $themeColorActive,
+      $themeColorDisable,
+      $themeColorError
+    );
+    &.el-button {
+      height: 36px !important;
+      line-height: 34px !important;
+      min-width: 100px !important;
+    }
+  }
+
+  .el-radio {
+    /deep/.el-radio__inner {
+      &:hover {
+        border-color: $themeColor !important;
+      }
+    }
+    &.is-checked {
+      /deep/.el-radio__inner {
+        background-color: $themeColor !important;
+        border-color: $themeColor !important;
+      }
+      /deep/.el-radio__label {
+        color: $themeColor !important;
+      }
+    }
+  }
+}

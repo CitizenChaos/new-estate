@@ -1,0 +1,63 @@
+@mixin el-button-plain-common(
+  $themeColor,
+  $themeColorHover,
+  $themeColorActive,
+  $themeColorDisable,
+  $themeColorError
+) {
+  &.el-button {
+    border-color: $themeColor !important;
+    color: $themeColor !important;
+    background-color: #fff !important;
+    border-radius: 2px !important;
+    min-height: unset !important;
+    padding: 0 18px !important;
+    &:hover {
+      border-color: transparent !important;
+      background: $themeColorHover !important;
+      color: #ffffff !important;
+    }
+    &:active {
+      border-color: $themeColorActive !important;
+      background: $themeColorActive !important;
+      color: #ffffff !important;
+    }
+  }
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:active {
+    border-color: transparent !important;
+    background: $themeColorDisable !important;
+    color: #fff !important;
+  }
+}
+
+@mixin el-button-common(
+  $themeColor,
+  $themeColorHover,
+  $themeColorActive,
+  $themeColorDisable,
+  $themeColorError
+) {
+  &.el-button {
+    border-color: $themeColor !important;
+    background: $themeColor !important;
+    color: #ffffff !important;
+    border-radius: 2px;
+    min-height: unset !important;
+    padding: 0 18px !important;
+    &:hover {
+      border-color: transparent !important;
+      background: $themeColorHover !important;
+    }
+    &:active {
+      background: $themeColorActive !important;
+    }
+  }
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:active {
+    border-color: transparent !important;
+    background: $themeColorDisable !important;
+  }
+}

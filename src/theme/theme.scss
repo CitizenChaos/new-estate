@@ -1,0 +1,32 @@
+@import './themeClassName.scss';
+/**
+ *混入颜色顺序说明
+ *
+ * normal
+ * hover
+ * active
+ * disable
+ * error
+ */
+
+// 蓝色主题
+.fooww_blue_theme {
+  @include themeFn(
+    rgb(0, 129, 255),
+    rgb(51, 154, 255),
+    rgb(51, 154, 255),
+    rgba(51, 154, 255, 0.4),
+    #ff4343
+  );
+}
+
+// 红色主题
+.fooww_red_theme {
+  @include themeFn(
+    rgba(207, 0, 112, 1),
+    rgba(215, 0, 64, 1),
+    rgba(200, 8, 82, 1),
+    rgba(207, 0, 112, 0.4),
+    #ff4343
+  );
+}

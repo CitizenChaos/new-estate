@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+      var theme = 'blue'
+      var urlTheme = getSearchArgs()
+      try {
+        theme = localBound.getTheme()
+      } catch (err) {
+        theme = urlTheme.theme || 'blue'
+      }
+      changeTopClassName(theme.toLowerCase())
+
+      // 给HTML添加类名
+      function changeTopClassName(lowerTheme) {
+        document.querySelector('html').className = 'fooww_' + lowerTheme + '_theme'
+      }
+      // 获取search参数
+      function getSearchArgs() {
+        var args = {}
+        var query = location.search.substring(1)
+        var pairs = query.split('&')
+        for (var i = 0; i < pairs.length; i++) {
+          var pos = pairs[i].indexOf('=')
+          if (pos == -1) continue
+          var name = pairs[i].substring(0, pos)
+          var value = pairs[i].substring(pos + 1)
+          value = decodeURIComponent(value)
+          args[name] = value
+        }
+        return args
+      }
+    </script>
   </body>
 </html>
