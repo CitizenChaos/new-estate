@@ -7,10 +7,12 @@
   $themeColorDisable,
   $themeColorError
 ) {
+  // 主题字体颜色
   .theme_font_color {
     color: $themeColor !important;
   }
 
+  // 行高为32的空心按钮
   .custom_btn_plain_32 {
     @include el-button-plain-common(
       $themeColor,
@@ -25,6 +27,8 @@
       min-width: 80px !important;
     }
   }
+
+  // 行高为36的空心按钮
   .custom_btn_plain_36 {
     @include el-button-plain-common(
       $themeColor,
@@ -40,6 +44,7 @@
     }
   }
 
+  // 行高为32的实心按钮
   .custom_btn_32 {
     @include el-button-common(
       $themeColor,
@@ -54,6 +59,8 @@
       min-width: 80px !important;
     }
   }
+
+  // 行高为36的实心按钮
   .custom_btn_36 {
     @include el-button-common(
       $themeColor,
@@ -69,6 +76,7 @@
     }
   }
 
+  // 单选
   .el-radio {
     /deep/.el-radio__inner {
       &:hover {
